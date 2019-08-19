@@ -1,3 +1,8 @@
+.mukaportes-vertical-menu {
+  height: 100%; 
+  position: absolute; 
+}
+
 .App {
   text-align: center;
 }
