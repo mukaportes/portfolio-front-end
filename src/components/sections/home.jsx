@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { Component } from 'react';
 import {
   Container,
@@ -13,18 +12,18 @@ class HomeSection extends Component {
       <Container text>
         <Header
           as='h1'
-          content='Imagine-a-Company'
+          content='MUKAPORTES'
           className='home-header'
           inverted
         />
         <Header
           as='h2'
-          content='Do whatever you want when you want to.'
+          content='Software consulting services'
           className='home-sub-header'
           inverted
         />
         <Button primary size='huge'>
-          Get Started
+          Learn more
       <Icon name='right arrow' />
         </Button>
       </Container>

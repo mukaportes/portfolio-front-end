@@ -1,16 +1,12 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import App from './App';
-import Feed from './components/articleItem';
-import Card from './components/firstComponent';
 import HomeSection from './components/sections/home';
 
 
 const Routes = () => (
   <App>
     <Switch>
-      <Route exact path="/feed" component={Feed} />
-      <Route exact path="/card" component={Card} />
       <Route exact path="/" component={HomeSection} />
     </Switch>
   </App>);
@@ -46,7 +42,7 @@ const Routes = () => (
             <Route exact path="/authed" render={(props) => (!auth.isAuthenticated() ? ( <Redirect to="/feed"/> ): (<Authed auth={auth} {...props} />))} />
             <Route exact path="/callback"  render={(props) => {
             handleAuthentication(props);
-            return <Callback {...props} /> 
+            return <Callback {...props} />
             }}/>
         </Switch>
     </App> )
