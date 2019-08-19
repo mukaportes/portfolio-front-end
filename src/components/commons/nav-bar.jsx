@@ -1,42 +1,74 @@
-import React from 'react';
-import { Dropdown, Icon, Menu, Segment } from 'semantic-ui-react';
+import React, { Component } from 'react';
+import { Dropdown, Menu } from 'semantic-ui-react';
 
 // TODO: Update <Search> usage after its will be implemented
 
-const MenuExampleAttached = () => (
-  <div>
-    <Menu attached='top'>
-      <Dropdown item icon='wrench' simple>
-        <Dropdown.Menu>
-          <Dropdown.Item>
-            <Icon name='dropdown' />
-            <span className='text'>New</span>
+class NavBar extends Component {
+  state = { activeItem: 'home' }
 
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
+  render() {
+    const { activeItem } = this.state
+
+    return (
+      <div>
+        <Menu attached='top'>
+          <Menu.Item
+            name='home'
+            active={activeItem === 'editorials'}
+            onClick={this.handleItemClick}
+          >
+            <b>MUKAPORTES</b>
+          </Menu.Item>
+
+          <Dropdown item text='About Me' simple>
             <Dropdown.Menu>
-              <Dropdown.Item>Document</Dropdown.Item>
-              <Dropdown.Item>Image</Dropdown.Item>
+              <Dropdown.Item href="/about/intro">Intro</Dropdown.Item>
+              <Dropdown.Item href="/about/skills">Skills</Dropdown.Item>
+              {/* <Dropdown.Divider />
+              <Dropdown.Header>Export</Dropdown.Header>
+              <Dropdown.Item>Share</Dropdown.Item> */}
             </Dropdown.Menu>
-          </Dropdown.Item>
-          <Dropdown.Item>Open</Dropdown.Item>
-          <Dropdown.Item>Save...</Dropdown.Item>
-          <Dropdown.Item>Edit Permissions</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Header>Export</Dropdown.Header>
-          <Dropdown.Item>Share</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+          </Dropdown>
 
-      <Menu.Menu position='right'>
-        <div className='ui right aligned category search item'>
-          <div className='ui transparent icon input'>
-            <input className='prompt' type='text' placeholder='Search animals...' />
-            <i className='search link icon' />
-          </div>
-          <div className='results' />
-        </div>
-      </Menu.Menu>
-    </Menu>
-  </div>
-);
+          <Dropdown item text='Jobs' simple>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/jobs/front-end">Front-end</Dropdown.Item>
+              <Dropdown.Item href="/jobs/back-end">Back-end</Dropdown.Item>
+              <Dropdown.Item href="/jobs/others">Others</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
-export default MenuExampleAttached;
+          <Dropdown item text='Content' simple>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/content/articles">Articles</Dropdown.Item>
+              <Dropdown.Item href="/content/tutorials">Tutorials</Dropdown.Item>
+              <Dropdown.Item href="/content/packages">Packages</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+
+          <Menu.Item
+            name='Contact'
+            active={activeItem === 'Contact'}
+            onClick={this.handleItemClick}
+            href='/contact'
+          >
+          </Menu.Item>
+
+          <Menu.Menu position='right'>
+            <div className='ui right aligned category search item'>
+              <div className='ui transparent icon input'>
+                <input className='prompt' type='text' placeholder='Search...' />
+                <i className='search link icon' />
+              </div>
+              <div className='results' />
+            </div>
+          </Menu.Menu>
+        </Menu>
+      </div>
+    );
+  }
+}
+
+export default NavBar;
