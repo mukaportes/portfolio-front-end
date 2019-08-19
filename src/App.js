@@ -6,7 +6,7 @@ import NavBar from './components/commons/nav-bar';
 class App extends Component {
   render() {
     return (
-      <div >
+      <div className="mukaportes-responsive-wrapper">
         <NavBar></NavBar>
         <div>
           {this.props.children}

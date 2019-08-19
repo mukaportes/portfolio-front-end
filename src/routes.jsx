@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import App from './App';
 import Feed from './components/articleItem';
 import Card from './components/firstComponent';
+import HomeSection from './components/sections/home';
 
 
 const Routes = () => (
@@ -10,6 +11,7 @@ const Routes = () => (
     <Switch>
       <Route exact path="/feed" component={Feed} />
       <Route exact path="/card" component={Card} />
+      <Route exact path="/" component={HomeSection} />
     </Switch>
   </App>);
 
