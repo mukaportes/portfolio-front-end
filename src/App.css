@@ -1,3 +1,7 @@
+body {
+  background-color: #282c34 !important;
+}
+
 .mukaportes-responsive-container {
   float: left;
   width: 33.333%;
@@ -26,38 +30,49 @@
     float: none;
     width: 100%;
   }
-  .home-header {
-    font-size: '2em';
-    margin-top: '1.5em';
-  }
-  .home-sub-header {
-    font-size: '1.5em';
+  .victory {
+    font-size: '1.5em' !important;
     margin-top: '0.5em';
   }
 }
 
-/* Typewriting Effect */
-.typewriter h1 {
-  width: 100%;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: pre-wrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+/* Home Logo */
+
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+.victory {
+  position: relative;
+  font-family: 'Permanent Marker', cursive;
+  font-variant: small-caps;
+  font-size: 7em !important;
+  -webkit-transform: skew(-5deg, -5deg);
+  padding-left: 80px;
+  background-image: -webkit-linear-gradient(rgb(104, 29, 101) 0%, #F9F9F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 4.5em 0 0 0;
+  -webkit-filter: drop-shadow(2px 2px 20px rgb(131, 39, 128));
+  text-align: left !important;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+.victory-v:before {
+  content: '-';
+  position: absolute;
+  top: -51px;
+  left: -51px;
+  background-image: -webkit-linear-gradient(rgb(104, 29, 101) 0%, #FC96FC 100%);
+  -webkit-background-clip: text;
 }
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
+.victory-v:after {
+  content: '-';
+  position: absolute;
+  top: -52px;
+  left: 803px;
+  background-image: -webkit-linear-gradient(rgb(104, 29, 101) 0%, #FC96FC 100%);
+  -webkit-background-clip: text;
 }
+
+/* Home Logo */
 
 .App {
   text-align: center;
